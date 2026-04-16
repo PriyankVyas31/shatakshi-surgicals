@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Shatakshi Surgicals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone-alt"></i> +91-98765-43210</span>
+                <span><i class="fas fa-envelope"></i> info@shatakshisurgicals.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">Track Order</a>
+                <a href="#">Help & Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat" style="font-size: 2rem; color: #e17055;"></i>
+                Shatakshi <span>Surgicals</span>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for surgical instruments, medicines, equipment..." oninput="searchProducts(this.value)">
+                <button onclick="searchProducts(document.getElementById('searchInput').value)">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div id="searchResults" class="search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-radius:0 0 12px 12px; box-shadow:0 5px 30px rgba(0,0,0,0.12); max-height:300px; overflow-y:auto; z-index:999;"></div>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="header-action" onclick="event.preventDefault()">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="cart.html" class="header-action">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list" id="navList">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="products.html?category=surgical-instruments">Surgical Instruments</a></li>
+                <li><a href="products.html?category=diagnostic-equipment">Diagnostics</a></li>
+                <li><a href="products.html?category=pharmaceuticals">Pharmaceuticals</a></li>
+                <li><a href="products.html?tag=bestseller">Best Sellers</a></li>
+                <li><a href="products.html?tag=sale">Offers</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Shopping Cart</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> <span>Cart</span>
+        </div>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="container">
+        <div class="cart-page" id="cartPage">
+            <!-- Filled by JS -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 40px;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Shatakshi Surgicals</h4>
+                    <p>Your trusted partner for premium quality surgical instruments, medical equipment, and pharmaceutical products.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone-alt"></i><span>+91-98765-43210</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@shatakshisurgicals.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shatakshi Surgicals. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCart();
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

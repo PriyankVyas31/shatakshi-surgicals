@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shatakshi Surgicals - Trusted Surgical & Pharmaceutical Equipment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone-alt"></i> +91-98765-43210</span>
+                <span><i class="fas fa-envelope"></i> info@shatakshisurgicals.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">Track Order</a>
+                <a href="#">Help & Support</a>
+                <span><i class="fas fa-truck"></i> Free Shipping on Orders Above ₹5,000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat" style="font-size: 2rem; color: #e17055;"></i>
+                Shatakshi <span>Surgicals</span>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for surgical instruments, medicines, equipment..." oninput="searchProducts(this.value)">
+                <button onclick="searchProducts(document.getElementById('searchInput').value)">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div id="searchResults" class="search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-radius:0 0 12px 12px; box-shadow:0 5px 30px rgba(0,0,0,0.12); max-height:300px; overflow-y:auto; z-index:999;"></div>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="header-action" onclick="event.preventDefault()">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="cart.html" class="header-action">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list" id="navList">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li>
+                    <a href="products.html">Products <i class="fas fa-chevron-down" style="font-size:0.7rem;margin-left:4px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="products.html?category=surgical-instruments">Surgical Instruments</a></li>
+                        <li><a href="products.html?category=diagnostic-equipment">Diagnostic Equipment</a></li>
+                        <li><a href="products.html?category=hospital-furniture">Hospital Furniture</a></li>
+                        <li><a href="products.html?category=ot-equipment">OT Equipment</a></li>
+                        <li><a href="products.html?category=disposables">Disposables & Consumables</a></li>
+                        <li><a href="products.html?category=orthopaedic">Orthopaedic Supplies</a></li>
+                        <li><a href="products.html?category=pharmaceuticals">Pharmaceuticals</a></li>
+                        <li><a href="products.html">View All Products</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html?category=surgical-instruments">Surgical Instruments</a></li>
+                <li><a href="products.html?category=diagnostic-equipment">Diagnostics</a></li>
+                <li><a href="products.html?category=pharmaceuticals">Pharmaceuticals</a></li>
+                <li><a href="products.html?tag=bestseller">Best Sellers</a></li>
+                <li><a href="products.html?tag=sale">Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Trusted Partner for <span>Surgical & Medical</span> Equipment</h1>
+                <p>Shatakshi Surgicals provides premium quality surgical instruments, diagnostic equipment, hospital furniture, and pharmaceutical products at the best prices. Serving hospitals, clinics, and healthcare professionals since 2010.</p>
+                <div class="hero-btns">
+                    <a href="products.html" class="btn btn-secondary btn-lg">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="#categories" class="btn btn-outline btn-lg">Browse Categories</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Stethoscope illustration -->
+                    <circle cx="250" cy="200" r="150" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                    <circle cx="250" cy="200" r="100" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+                    <!-- Medical cross -->
+                    <rect x="225" y="140" width="50" height="120" rx="8" fill="rgba(0,184,148,0.8)"/>
+                    <rect x="190" y="175" width="120" height="50" rx="8" fill="rgba(0,184,148,0.8)"/>
+                    <!-- Heartbeat line -->
+                    <polyline points="100,300 150,300 170,260 190,340 210,280 230,300 350,300 370,250 390,350 410,300 450,300"
+                              stroke="rgba(225,112,85,0.8)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Pills -->
+                    <ellipse cx="380" cy="120" rx="25" ry="15" fill="rgba(13,110,253,0.6)" transform="rotate(-30 380 120)"/>
+                    <ellipse cx="120" cy="130" rx="20" ry="12" fill="rgba(225,112,85,0.6)" transform="rotate(20 120 130)"/>
+                    <!-- Syringe hint -->
+                    <rect x="340" cy="180" width="8" height="60" rx="4" fill="rgba(255,255,255,0.3)" transform="rotate(45 344 210)"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Trust Badges -->
+    <section class="section" style="padding: 40px 0;">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-truck" style="font-size:1.3rem;"></i></div>
+                    <div>
+                        <h3>Free Shipping</h3>
+                        <p>On orders above ₹5,000 across India</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-shield-alt" style="font-size:1.3rem;"></i></div>
+                    <div>
+                        <h3>Genuine Products</h3>
+                        <p>100% authentic & certified equipment</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-undo" style="font-size:1.3rem;"></i></div>
+                    <div>
+                        <h3>Easy Returns</h3>
+                        <p>15-day hassle-free return policy</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-headset" style="font-size:1.3rem;"></i></div>
+                    <div>
+                        <h3>24/7 Support</h3>
+                        <p>Dedicated customer support team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories" style="background: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Shop by Category</h2>
+                <p>Browse our wide range of surgical instruments, medical equipment, and pharmaceutical products</p>
+            </div>
+            <div class="categories-grid">
+                <a href="products.html?category=surgical-instruments" class="category-card">
+                    <div class="icon"><i class="fas fa-cut" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>Surgical Instruments</h3>
+                    <p>Forceps, Scissors, Retractors & more</p>
+                </a>
+                <a href="products.html?category=diagnostic-equipment" class="category-card">
+                    <div class="icon"><i class="fas fa-stethoscope" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>Diagnostic Equipment</h3>
+                    <p>BP Monitors, Glucometers & more</p>
+                </a>
+                <a href="products.html?category=hospital-furniture" class="category-card">
+                    <div class="icon"><i class="fas fa-bed" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>Hospital Furniture</h3>
+                    <p>Beds, Trolleys, Wheelchairs</p>
+                </a>
+                <a href="products.html?category=ot-equipment" class="category-card">
+                    <div class="icon"><i class="fas fa-procedures" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>OT Equipment</h3>
+                    <p>OT Lights, Tables, Cautery</p>
+                </a>
+                <a href="products.html?category=disposables" class="category-card">
+                    <div class="icon"><i class="fas fa-syringe" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>Disposables</h3>
+                    <p>Gloves, Syringes, Masks</p>
+                </a>
+                <a href="products.html?category=orthopaedic" class="category-card">
+                    <div class="icon"><i class="fas fa-bone" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>Orthopaedic</h3>
+                    <p>Implants, Supports, Braces</p>
+                </a>
+                <a href="products.html?category=pharmaceuticals" class="category-card">
+                    <div class="icon"><i class="fas fa-pills" style="font-size:1.5rem; color:var(--primary);"></i></div>
+                    <h3>Pharmaceuticals</h3>
+                    <p>Medicines & Healthcare Products</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Products</h2>
+                <p>Handpicked top-selling surgical and medical products for you</p>
+            </div>
+            <div class="products-grid" id="featuredProducts">
+                <!-- Filled by JS -->
+            </div>
+            <div class="text-center mt-3">
+                <a href="products.html" class="btn btn-outline-primary btn-lg">View All Products <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner">
+                <h2>Bulk Orders? Get Special Discounts!</h2>
+                <p>We offer exclusive pricing for hospitals, clinics, and medical institutions. Contact us for custom quotes.</p>
+                <a href="#contact" class="btn btn-outline btn-lg">Get a Quote <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="section" style="background: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Best Sellers</h2>
+                <p>Most popular products loved by healthcare professionals</p>
+            </div>
+            <div class="products-grid" id="bestSellers">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted Brands We Carry</h2>
+                <p>We partner with leading manufacturers to bring you the best</p>
+            </div>
+            <div class="brands-grid">
+                <div class="brand">3M</div>
+                <div class="brand">B.Braun</div>
+                <div class="brand">Becton Dickinson</div>
+                <div class="brand">Medtronic</div>
+                <div class="brand">Ethicon</div>
+                <div class="brand">Philips</div>
+                <div class="brand">Omron</div>
+                <div class="brand">Dr. Morepen</div>
+                <div class="brand">Hindustan Syringes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Trusted by 500+ hospitals and clinics across India</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote">"Shatakshi Surgicals has been our go-to supplier for all surgical instruments. Excellent quality and timely delivery. Their customer service is outstanding."</div>
+                    <div class="author">
+                        <div class="avatar">DR</div>
+                        <div class="author-info">
+                            <h4>Dr. Rajesh Kumar</h4>
+                            <p>Chief Surgeon, City Hospital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">"We've been ordering medical supplies from Shatakshi Surgicals for over 3 years. Great prices, genuine products, and reliable service every time."</div>
+                    <div class="author">
+                        <div class="avatar">PS</div>
+                        <div class="author-info">
+                            <h4>Dr. Priya Sharma</h4>
+                            <p>Director, Lifeline Clinic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">"The range of pharmaceutical products is impressive. Quick delivery and the quality matches the top brands. Highly recommended for any healthcare setup."</div>
+                    <div class="author">
+                        <div class="avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Amit Mehta</h4>
+                            <p>Purchase Manager, Apollo Care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div>
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get updates on new products, offers, and healthcare tips</p>
+            </div>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Shatakshi Surgicals</h4>
+                    <p>Your trusted partner for premium quality surgical instruments, medical equipment, and pharmaceutical products. Serving healthcare professionals since 2010.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="products.html?tag=bestseller">Best Sellers</a></li>
+                        <li><a href="products.html?tag=sale">Special Offers</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="products.html?category=surgical-instruments">Surgical Instruments</a></li>
+                        <li><a href="products.html?category=diagnostic-equipment">Diagnostic Equipment</a></li>
+                        <li><a href="products.html?category=hospital-furniture">Hospital Furniture</a></li>
+                        <li><a href="products.html?category=ot-equipment">OT Equipment</a></li>
+                        <li><a href="products.html?category=disposables">Disposables</a></li>
+                        <li><a href="products.html?category=pharmaceuticals">Pharmaceuticals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123, Medical Market, Sadar Bazaar, Agra, Uttar Pradesh - 282001</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91-98765-43210<br>+91-87654-32109</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@shatakshisurgicals.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shatakshi Surgicals. All Rights Reserved.</p>
+                <div style="display:flex; gap:20px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Return Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Load featured products on homepage
+        document.addEventListener('DOMContentLoaded', function() {
+            const featured = products.filter(p => p.featured).slice(0, 8);
+            const bestSellers = products.filter(p => p.tags && p.tags.includes('bestseller')).slice(0, 4);
+
+            const featuredGrid = document.getElementById('featuredProducts');
+            const bestSellersGrid = document.getElementById('bestSellers');
+
+            if (featuredGrid) featuredGrid.innerHTML = featured.map(p => createProductCard(p)).join('');
+            if (bestSellersGrid) bestSellersGrid.innerHTML = bestSellers.map(p => createProductCard(p)).join('');
+
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

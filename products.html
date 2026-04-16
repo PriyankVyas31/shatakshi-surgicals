@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Shatakshi Surgicals</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <span><i class="fas fa-phone-alt"></i> +91-98765-43210</span>
+                <span><i class="fas fa-envelope"></i> info@shatakshisurgicals.com</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="#">Track Order</a>
+                <a href="#">Help & Support</a>
+                <span><i class="fas fa-truck"></i> Free Shipping on Orders Above ₹5,000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heartbeat" style="font-size: 2rem; color: #e17055;"></i>
+                Shatakshi <span>Surgicals</span>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for surgical instruments, medicines, equipment..." oninput="searchProducts(this.value)">
+                <button onclick="searchProducts(document.getElementById('searchInput').value)">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div id="searchResults" class="search-dropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-radius:0 0 12px 12px; box-shadow:0 5px 30px rgba(0,0,0,0.12); max-height:300px; overflow-y:auto; z-index:999;"></div>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="header-action" onclick="event.preventDefault()">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="cart.html" class="header-action">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list" id="navList">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="products.html" class="active">Products <i class="fas fa-chevron-down" style="font-size:0.7rem;margin-left:4px;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="products.html?category=surgical-instruments">Surgical Instruments</a></li>
+                        <li><a href="products.html?category=diagnostic-equipment">Diagnostic Equipment</a></li>
+                        <li><a href="products.html?category=hospital-furniture">Hospital Furniture</a></li>
+                        <li><a href="products.html?category=ot-equipment">OT Equipment</a></li>
+                        <li><a href="products.html?category=disposables">Disposables & Consumables</a></li>
+                        <li><a href="products.html?category=orthopaedic">Orthopaedic Supplies</a></li>
+                        <li><a href="products.html?category=pharmaceuticals">Pharmaceuticals</a></li>
+                        <li><a href="products.html">View All Products</a></li>
+                    </ul>
+                </li>
+                <li><a href="products.html?category=surgical-instruments">Surgical Instruments</a></li>
+                <li><a href="products.html?category=diagnostic-equipment">Diagnostics</a></li>
+                <li><a href="products.html?category=pharmaceuticals">Pharmaceuticals</a></li>
+                <li><a href="products.html?tag=bestseller">Best Sellers</a></li>
+                <li><a href="products.html?tag=sale">Offers</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1 id="pageTitle">All Products</h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> <span id="breadcrumbCurrent">Products</span>
+        </div>
+    </div>
+
+    <!-- Products Page Content -->
+    <div class="container">
+        <div class="products-page">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <label><input type="checkbox" value="surgical-instruments" onchange="applyFilters()"> Surgical Instruments</label>
+                    <label><input type="checkbox" value="diagnostic-equipment" onchange="applyFilters()"> Diagnostic Equipment</label>
+                    <label><input type="checkbox" value="hospital-furniture" onchange="applyFilters()"> Hospital Furniture</label>
+                    <label><input type="checkbox" value="ot-equipment" onchange="applyFilters()"> OT Equipment</label>
+                    <label><input type="checkbox" value="disposables" onchange="applyFilters()"> Disposables & Consumables</label>
+                    <label><input type="checkbox" value="orthopaedic" onchange="applyFilters()"> Orthopaedic Supplies</label>
+                    <label><input type="checkbox" value="pharmaceuticals" onchange="applyFilters()"> Pharmaceuticals</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <div class="price-range">
+                        <input type="number" placeholder="Min ₹" id="priceMin" oninput="applyFilters()">
+                        <span>-</span>
+                        <input type="number" placeholder="Max ₹" id="priceMax" oninput="applyFilters()">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Brand</h3>
+                    <label><input type="checkbox" value="3M" class="brand-filter" onchange="applyFilters()"> 3M</label>
+                    <label><input type="checkbox" value="B.Braun" class="brand-filter" onchange="applyFilters()"> B.Braun</label>
+                    <label><input type="checkbox" value="Ethicon" class="brand-filter" onchange="applyFilters()"> Ethicon</label>
+                    <label><input type="checkbox" value="Omron" class="brand-filter" onchange="applyFilters()"> Omron</label>
+                    <label><input type="checkbox" value="Philips" class="brand-filter" onchange="applyFilters()"> Philips</label>
+                    <label><input type="checkbox" value="Dr. Morepen" class="brand-filter" onchange="applyFilters()"> Dr. Morepen</label>
+                    <label><input type="checkbox" value="Hindustan Syringes" class="brand-filter" onchange="applyFilters()"> Hindustan Syringes</label>
+                    <label><input type="checkbox" value="Shatakshi" class="brand-filter" onchange="applyFilters()"> Shatakshi</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Rating</h3>
+                    <label><input type="checkbox" value="4" class="rating-filter" onchange="applyFilters()"> ⭐⭐⭐⭐ & Above</label>
+                    <label><input type="checkbox" value="3" class="rating-filter" onchange="applyFilters()"> ⭐⭐⭐ & Above</label>
+                </div>
+
+                <button class="btn btn-outline-primary btn-sm btn-block" onclick="clearFilters()">Clear All Filters</button>
+            </aside>
+
+            <!-- Products Grid -->
+            <div>
+                <div class="products-toolbar">
+                    <span class="result-count" id="resultCount">Showing 0 products</span>
+                    <select id="sortSelect" onchange="applyFilters()">
+                        <option value="default">Sort by: Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name-az">Name: A to Z</option>
+                        <option value="name-za">Name: Z to A</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter" style="margin-top:40px;">
+        <div class="container">
+            <div>
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get updates on new products, offers, and healthcare tips</p>
+            </div>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-secondary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Shatakshi Surgicals</h4>
+                    <p>Your trusted partner for premium quality surgical instruments, medical equipment, and pharmaceutical products.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="products.html?tag=bestseller">Best Sellers</a></li>
+                        <li><a href="products.html?tag=sale">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span>123, Medical Market, Sadar Bazaar, Agra, UP</span></li>
+                        <li><i class="fas fa-phone-alt"></i><span>+91-98765-43210</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@shatakshisurgicals.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shatakshi Surgicals. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initProductsPage();
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>
