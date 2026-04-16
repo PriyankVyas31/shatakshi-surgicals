@@ -1,4 +1,4 @@
-# 🔧 Low-Level Design (LLD) — Shatakshi Surgicals
+# 🔧 Low-Level Design (LLD) — Shivam Surgicals
 
 > **Version:** 1.0  
 > **Date:** April 2026  
@@ -10,7 +10,7 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This document provides detailed low-level design specifications for the **Shatakshi Surgicals** e-commerce frontend, covering module definitions, function signatures, data models, DOM structure, CSS architecture, event handling, state management, and inter-module communication.
+This document provides detailed low-level design specifications for the **Shivam Surgicals** e-commerce frontend, covering module definitions, function signatures, data models, DOM structure, CSS architecture, event handling, state management, and inter-module communication.
 
 ### 1.2 Related Documents
 - [README.md](../README.md) — Project overview and setup
@@ -125,7 +125,7 @@ This document provides detailed low-level design specifications for the **Shatak
  */
 ```
 
-**Storage Key:** `shatakshi_cart`  
+**Storage Key:** `Shivam_cart`  
 **Storage Format:** `JSON.stringify(CartItem[])`
 
 ### 3.3 Cart Totals Schema
@@ -187,7 +187,7 @@ This document provides detailed low-level design specifications for the **Shatak
 Input:  none
 Output: CartItem[] (empty array if error or no data)
 Logic:
-  1. Read localStorage key "shatakshi_cart"
+  1. Read localStorage key "Shivam_cart"
   2. JSON.parse the value
   3. Return parsed array or [] on any error (try-catch)
 Side Effects: none
@@ -199,7 +199,7 @@ Input:  cart — array of CartItem objects
 Output: void
 Logic:
   1. JSON.stringify(cart)
-  2. Write to localStorage key "shatakshi_cart"
+  2. Write to localStorage key "Shivam_cart"
   3. Call updateCartCount()
 Side Effects: localStorage write, DOM update (badge)
 ```
@@ -737,7 +737,7 @@ The application has two types of state:
 │                                                  │
 │  ┌────────────────┐    ┌──────────────────────┐  │
 │  │ products[]     │    │ localStorage         │  │
-│  │ (products-     │    │ shatakshi_cart: [     │  │
+│  │ (products-     │    │ Shivam_cart: [     │  │
 │  │  data.js)      │    │   {id,name,price,    │  │
 │  │                │    │    qty,...},          │  │
 │  │ Read-only      │    │   ...                │  │

@@ -1,4 +1,4 @@
-# 📐 High-Level Design (HLD) — Shatakshi Surgicals
+# 📐 High-Level Design (HLD) — Shivam Surgicals
 
 > **Version:** 1.0  
 > **Date:** April 2026  
@@ -10,7 +10,7 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This document describes the high-level architecture and design of the **Shatakshi Surgicals** e-commerce platform — a web application for browsing, searching, and purchasing surgical instruments, medical equipment, and pharmaceutical products.
+This document describes the high-level architecture and design of the **Shivam Surgicals** e-commerce platform — a web application for browsing, searching, and purchasing surgical instruments, medical equipment, and pharmaceutical products.
 
 ### 1.2 Scope
 The current implementation covers **Phase 1** — a complete frontend-only e-commerce experience. The architecture is designed to be extensible for future backend integration (Phase 2), payment gateway (Phase 3), and advanced features (Phase 4).
@@ -108,7 +108,7 @@ The entire application runs in the browser. Product data is embedded in a JavaSc
 │  ┌───────────────────┐     ┌──────────────────────────────┐  │
 │  │ products-data.js  │     │     Browser localStorage     │  │
 │  │                   │     │                              │  │
-│  │ 36 products       │     │  Key: shatakshi_cart         │  │
+│  │ 36 products       │     │  Key: Shivam_cart         │  │
 │  │ 7 categories      │     │  Value: JSON array of items  │  │
 │  │ Static catalog    │     │  Persists across sessions    │  │
 │  └───────────────────┘     └──────────────────────────────┘  │
@@ -267,7 +267,7 @@ Product {
 ### 5.2 Cart Data Model (localStorage)
 
 ```javascript
-// Key: "shatakshi_cart"
+// Key: "Shivam_cart"
 // Value: JSON array
 CartItem {
     id:            Number     // Product ID (references Product.id)

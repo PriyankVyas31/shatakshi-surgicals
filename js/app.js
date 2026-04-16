@@ -1,18 +1,18 @@
 // ============================================================
-// Shatakshi Surgicals - Main Application JavaScript
+// Shivam Surgicals - Main Application JavaScript
 // ============================================================
 
 // ==================== CART MANAGEMENT ====================
 function getCart() {
     try {
-        return JSON.parse(localStorage.getItem('shatakshi_cart')) || [];
+        return JSON.parse(localStorage.getItem('Shivam_cart')) || [];
     } catch {
         return [];
     }
 }
 
 function saveCart(cart) {
-    localStorage.setItem('shatakshi_cart', JSON.stringify(cart));
+    localStorage.setItem('Shivam_cart', JSON.stringify(cart));
     updateCartCount();
 }
 
@@ -399,7 +399,7 @@ function initProductDetailPage() {
     }
 
     if (breadcrumb) breadcrumb.textContent = product.name;
-    document.title = `${product.name} - Shatakshi Surgicals`;
+    document.title = `${product.name} - Shivam Surgicals`;
 
     detailContainer.innerHTML = `
         <!-- Product Gallery -->
@@ -674,7 +674,7 @@ function handleCheckout(event) {
     if (orderIdEl) orderIdEl.textContent = `Order #${orderId}`;
 
     // Clear cart
-    localStorage.removeItem('shatakshi_cart');
+    localStorage.removeItem('Shivam_cart');
     updateCartCount();
 
     // Scroll to top

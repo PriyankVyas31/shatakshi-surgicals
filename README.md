@@ -1,9 +1,9 @@
-# 🏥 Shatakshi Surgicals
+# 🏥 Shivam Surgicals
 
 > **E-commerce platform for surgical instruments, medical equipment & pharmaceutical products**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://priyankvyas31.github.io/shatakshi-surgicals/)
-[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://priyankvyas31.github.io/shatakshi-surgicals/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://priyankvyas31.github.io/Shivam-surgicals/)
+[![GitHub Pages](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://priyankvyas31.github.io/Shivam-surgicals/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]()
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]()
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
@@ -30,7 +30,7 @@
 
 ## 🔎 Overview
 
-**Shatakshi Surgicals** is a fully functional, frontend-only e-commerce website built for a surgical equipment and pharmaceutical shop. It allows users to browse products across multiple categories, search and filter them, add items to a cart, and proceed through a complete checkout flow — all without a backend server.
+**Shivam Surgicals** is a fully functional, frontend-only e-commerce website built for a surgical equipment and pharmaceutical shop. It allows users to browse products across multiple categories, search and filter them, add items to a cart, and proceed through a complete checkout flow — all without a backend server.
 
 The application uses **localStorage** for cart persistence and is designed to be easily extended with a backend API and payment gateway integration in the future.
 
@@ -38,7 +38,7 @@ The application uses **localStorage** for cart persistence and is designed to be
 
 ## 🌐 Live Demo
 
-**🔗 [https://priyankvyas31.github.io/shatakshi-surgicals/](https://priyankvyas31.github.io/shatakshi-surgicals/)**
+**🔗 [https://priyankvyas31.github.io/Shivam-surgicals/](https://priyankvyas31.github.io/Shivam-surgicals/)**
 
 ---
 
@@ -96,7 +96,7 @@ The application uses **localStorage** for cart persistence and is designed to be
 ## 📁 Project Structure
 
 ```
-shatakshi-surgicals/
+Shivam-surgicals/
 ├── index.html                 # Homepage (hero, categories, featured, testimonials)
 ├── products.html              # Product listing with filters & sorting
 ├── product-detail.html        # Individual product detail page
@@ -199,10 +199,10 @@ shatakshi-surgicals/
 
 ```bash
 # Clone the repository
-git clone https://github.com/PriyankVyas31/shatakshi-surgicals.git
+git clone https://github.com/PriyankVyas31/Shivam-surgicals.git
 
 # Navigate to the project
-cd shatakshi-surgicals
+cd Shivam-surgicals
 
 # Open in browser (any of these)
 start index.html          # Windows
@@ -216,7 +216,7 @@ python -m http.server 8000
 ```
 
 ### Using VS Code
-1. Open the `shatakshi-surgicals` folder in VS Code
+1. Open the `Shivam-surgicals` folder in VS Code
 2. Install the **Live Server** extension
 3. Right-click `index.html` → **Open with Live Server**
 
@@ -234,7 +234,7 @@ git commit -m "your commit message"
 git push origin main
 
 # GitHub Pages auto-deploys from main branch
-# Site available at: https://priyankvyas31.github.io/shatakshi-surgicals/
+# Site available at: https://priyankvyas31.github.io/Shivam-surgicals/
 ```
 
 ### Custom Domain (Optional)
@@ -294,8 +294,8 @@ git push origin main
 
 ## 📞 Contact
 
-**Shatakshi Surgicals**
-- 📧 Email: info@shatakshisurgicals.com
+**Shivam Surgicals**
+- 📧 Email: info@Shivamsurgicals.com
 - 📱 Phone: +91-98765-43210
 - 📍 Address: 123, Medical Market, Sadar Bazaar, Agra, UP - 282001
 
